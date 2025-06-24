@@ -49,4 +49,4 @@ func MetricsHandler(w http.ResponseWriter, r *http.Request) {
 			fmt.Fprintf(w, "petstore_http_requests_total{path=\"%s\",method=\"%s\"} %d\n", route, method, count)
 		}
 	}
-} 
+}
