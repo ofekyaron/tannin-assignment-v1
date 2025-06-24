@@ -12,6 +12,8 @@ import (
 
 func ConfigureRouters(root, svcrouter *mux.Router) {
 	svcrouter.Use(common.LoggingMiddleware())
+	svcrouter.Use(common.MetricsMiddleware())
+	root.HandleFunc("/metrics", common.MetricsHandler)
 }
 
 func BuildHandler() http.Handler {
